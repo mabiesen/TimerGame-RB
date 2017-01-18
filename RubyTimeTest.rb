@@ -43,7 +43,7 @@ end
 
 # Logs the time spent in each mode
 # Function has no returns: requires two public arrays
-# Had issues getting the correct values of time inputs, use the following:
+# Had issues getting the correct values of time inputs, use the following for millis:
 # (Time.now.to_f * 1000).floor
 def logtoggletime(toggle, startTime, endTime, arrayOn, arrayOff)
 	millistime = endTime - startTime
