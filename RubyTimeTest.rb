@@ -73,7 +73,7 @@ starttime = (Time.now.to_f * 1000).floor
 startround = starttime
 avar = true
 while avar == true
-	puts "Press x to change toggle"
+	puts "Press x to change toggle or v to quit"
 	input = gets.chomp
 	endround = (Time.now.to_f * 1000).floor
 	if input.to_s == "x"
