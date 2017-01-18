@@ -1,3 +1,13 @@
+#Ruby Time Test
+#
+#Time Test game in Ruby as a test of skill in preparation for Rails
+
+#Directions:
+#Follow the game prompts.
+#The game will ask the user to click 's' to begin the game
+#From then on the user will have two options: press 'x' to turn mode on and off, or 'v' to quit
+#Upon quitting the game, the user is provided stats on game length.
+
 require 'date'
 
 # Wait for user to enter the correct input before proceeding
@@ -43,13 +53,22 @@ def logtoggletime(toggle, startTime, endTime, arrayOn, arrayOff)
 	end
 end
 
-
+#Set game variables
+#The array variables will store game on and off time
+#The mode variables tell our change toggle function the options for our toggle
+#The toggle starts in off mode
 arrayOn = []
 arrayOff = []
 toggle = "On"
 onmode = "On"
 offmode = "Off"
+
+#Wait for user to click 's' to begin game
 waitforinput("s")
+
+#This is the bulk of the game
+#Accounting for the first round requires roundtime to be equal to starttime
+#The game loops until the user selects 'v'
 starttime = (Time.now.to_f * 1000).floor
 startround = starttime
 avar = true
@@ -71,16 +90,20 @@ while avar == true
 	end
 	startround = endround
 end
+
+#Section sums up the arrays and compares to total game time
 totalGameTime = endtime - starttime
-puts "Total game time is " + totalGameTime.to_s
 sumOn = 0
 sumOff = 0
 arrayOn.each {|x| sumOn = sumOn + x}
 arrayOff.each{|x| sumOff = sumOff + x}
+variance = totalGameTime - (sumOn + sumOff)
 
+#This last section outputs game stats to the user
+puts "Total game time is " + totalGameTime.to_s
 puts "Total On time: " + sumOn.to_s
 puts "Total Off time " + sumOff.to_s
-puts "Variance : " + (totalGameTime - (sumOn + sumOff)).to_s
+puts "Variance : " + variance.to_s
 puts "Time spent By round:"
 puts "On time by round"
 arrayOn.each {|x| puts x}
