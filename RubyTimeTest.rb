@@ -27,7 +27,7 @@ end
 
 #This is a function to change a toggle variable state
 #Variables are converted to a string, allowing for any type of input
-#The return of the function is toggle in its new state.
+#The return of the function is toggle in its new state.  Data type of new state not affected by string conversion.
 def changetoggle(toggle, stateOne, stateTwo)
 	toggles = toggle.to_s
 	stateOnes = stateOne.to_s
