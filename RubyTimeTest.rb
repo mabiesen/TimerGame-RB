@@ -8,6 +8,7 @@
 #From then on the user will have two options: press 'x' to turn mode on and off, or 'v' to quit
 #Upon quitting the game, the user is provided stats on game length.
 
+#date is required for getting the current time
 require 'date'
 
 # Wait for user to enter the correct input before proceeding
